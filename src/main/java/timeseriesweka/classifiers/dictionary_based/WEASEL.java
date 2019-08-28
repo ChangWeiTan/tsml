@@ -44,6 +44,14 @@ import timeseriesweka.classifiers.TrainAccuracyEstimator;
  *
  * @author Patrick Schaefer
  *
+ * 
+ * Updated August 2019 by Patrick:
+ * 1. Free Memory of Bag-of-Patterns after Chi-Squared-Test (before it was only set to 0, still using memory).
+ * 2. Limit number of words in the Bag-of-Patterns, leading to orders of magnitude smaller memory footprint
+ * 3. Fixed a bug in the chi-squared test to aggregate chi-scores over all classes
+ * 
+ * Test of equivalence to old version on going
+ * 
  */
 public class WEASEL extends AbstractClassifierWithTrainingInfo implements TrainAccuracyEstimator,TechnicalInformationHandler {
 
