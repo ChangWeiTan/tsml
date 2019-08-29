@@ -145,7 +145,7 @@ public class TSF extends AbstractClassifierWithTrainingInfo
     * or a OOB estimate is formed. If set, train results are overwritten with 
     * each call to buildClassifier File opened on trainCVPath.*/     
     boolean trainAccuracyEst=false;  
-    private String trainCVPath="";
+    private String trainFoldPath="";
     
     /** voteEnsemble determines whether to aggregate classifications or
      * probabilities when predicting */
@@ -206,7 +206,7 @@ public class TSF extends AbstractClassifierWithTrainingInfo
  */    
     @Override
     public void writeTrainEstimatesToFile(String train) {
-        trainCVPath=train;
+        trainFoldPath=train;
         trainAccuracyEst=true;
     }
 /**
@@ -215,8 +215,8 @@ public class TSF extends AbstractClassifierWithTrainingInfo
  * @param setCV 
  */
     @Override
-    public void setFindTrainAccuracyEstimate(boolean setCV){
-        trainAccuracyEst=setCV;
+    public void setFindTrainAccuracyEstimate(boolean estimateAccuracy){
+        trainAccuracyEst=estimateAccuracy;
     }
 /** 
  * Maybe this method needs renaming?
@@ -511,8 +511,8 @@ public class TSF extends AbstractClassifierWithTrainingInfo
                 trainResults.setParas(getParameters());
                 trainResults.finaliseResults(actuals);
              }
-            if(trainCVPath!=""){
-                trainResults.writeFullResultsToFile(trainCVPath);
+            if(trainFoldPath!=""){
+                trainResults.writeFullResultsToFile(trainFoldPath);
 /*                OutFile of=new OutFile(trainCVPath);
                 of.writeLine(data.relationName()+",TSF,train");
                 of.writeLine(getParameters());
