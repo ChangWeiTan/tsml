@@ -406,7 +406,7 @@ public class WEASEL extends AbstractClassifierWithTrainingInfo implements TrainA
 
     if(trainCVPath!=""){
       OutFile of=new OutFile(trainCVPath);
-      of.writeLine(samples.relationName()+",TSF,train");
+      of.writeLine(samples.relationName()+",WEASEL,train");
       of.writeLine(getParameters());
       of.writeLine(trainResults.getAcc()+"");
       double[] trueClassVals,predClassVals;
@@ -415,7 +415,7 @@ public class WEASEL extends AbstractClassifierWithTrainingInfo implements TrainA
       for(int i=0;i<samples.numInstances();i++){
         //Basic sanity check
         if(samples.instance(i).classValue()!=trueClassVals[i]){
-          throw new Exception("ERROR in TSF cross validation, class mismatch!");
+          throw new Exception("ERROR in WEASEL cross validation, class mismatch!");
         }
         of.writeString((int)trueClassVals[i]+","+(int)predClassVals[i]+",");
         for(double d:trainResults.getProbabilityDistribution(i))
