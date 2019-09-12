@@ -110,7 +110,7 @@ public class BOSS extends AbstractClassifierWithTrainingInfo implements TrainAcc
         StringBuilder sb = new StringBuilder();
         sb.append(super.getParameters());
 
-        sb.append(",numSeries,").append(numSeries);
+        sb.append(",Dimension,").append(numSeries);
 
         for (int n = 0; n < numSeries; n++) {
             sb.append(",numclassifiers,").append(n).append(",").append(numClassifiers[n]);
