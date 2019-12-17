@@ -361,7 +361,7 @@ public abstract class Efficient1NN extends AbstractClassifierWithTrainingInfo im
                 paramId = 100;
             }
         }
-//        System.out.println(this.classifierIdentifier+", bsfParamId "+bsfParamId);
+        System.out.println(this.classifierIdentifier+", bsfParamId "+bsfParamId);
         this.buildClassifier(train);
         if (this.allowLoocv) {
             this.setParamsFromParamId(train, bsfParamId);
@@ -750,7 +750,7 @@ public abstract class Efficient1NN extends AbstractClassifierWithTrainingInfo im
         this.buildClassifier(train);
         this.setParamsFromParamId(train, bsfParamId);
 
-
+        System.out.println(this.classifierIdentifier+", bsfParamId "+bsfParamId);
         if (fileWriting) {
             String parsedFileName = this.outputDir + this.classifierIdentifier + "/FastEE_Predictions/" +
                     datasetName + "/trainFold" + resampleId + ".csv";

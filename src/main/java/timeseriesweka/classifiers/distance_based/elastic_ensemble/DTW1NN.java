@@ -304,22 +304,26 @@ public class DTW1NN extends Efficient1NN {
      ************************************************************************************************/
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex) {
-        return LbKeogh.distance(candidate, trainCache.getUE(queryIndex, window), trainCache.getLE(queryIndex, window));
+//        return LbKeogh.distance(candidate, trainCache.getUE(queryIndex, window), trainCache.getLE(queryIndex, window));
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, double cutOffValue) {
-        return LbKeogh.distance(candidate, trainCache.getUE(queryIndex, window), trainCache.getLE(queryIndex, window), cutOffValue);
+//        return LbKeogh.distance(candidate, trainCache.getUE(queryIndex, window), trainCache.getLE(queryIndex, window), cutOffValue);
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, SequenceStatsCache cache) {
-        return LbKeogh.distance(candidate, cache.getUE(queryIndex, window), cache.getLE(queryIndex, window));
+//        return LbKeogh.distance(candidate, cache.getUE(queryIndex, window), cache.getLE(queryIndex, window));
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, double cutOffValue, SequenceStatsCache cache) {
         return LbKeogh.distance(candidate, cache.getUE(queryIndex, window), cache.getLE(queryIndex, window), cutOffValue);
+//        return 0;
     }
 
 
@@ -386,7 +390,7 @@ public class DTW1NN extends Efficient1NN {
                     // --- --- WITHOUT NN CASE --- ---
                     // We don't have the NN yet.
                     // Sort the challengers so we have the better chance to organize the good pruning.
-                    Collections.sort(challengers);
+//                    Collections.sort(challengers);
 
                     for (LazyAssessNN_DTW challenger : challengers) {
                         final int previous = challenger.indexQuery;

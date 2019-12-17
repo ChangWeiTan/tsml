@@ -243,22 +243,26 @@ public class WDTW1NN extends Efficient1NN {
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex) {
-        return LbWdtw.distance(candidate, weightVector[0], trainCache.getMax(queryIndex), trainCache.getMin(queryIndex));
+//        return LbWdtw.distance(candidate, weightVector[0], trainCache.getMax(queryIndex), trainCache.getMin(queryIndex));
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final double cutOffValue) {
-        return LbWdtw.distance(candidate, weightVector[0], trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), cutOffValue);
+//        return LbWdtw.distance(candidate, weightVector[0], trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), cutOffValue);
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final SequenceStatsCache cache) {
-        return LbWdtw.distance(candidate, weightVector[0], cache.getMax(queryIndex), cache.getMin(queryIndex));
+//        return LbWdtw.distance(candidate, weightVector[0], cache.getMax(queryIndex), cache.getMin(queryIndex));
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final double cutOffValue, final SequenceStatsCache cache) {
-        return LbWdtw.distance(candidate, weightVector[0], cache.getMax(queryIndex), cache.getMin(queryIndex), cutOffValue);
+//        return LbWdtw.distance(candidate, weightVector[0], cache.getMax(queryIndex), cache.getMin(queryIndex), cutOffValue);
+        return 0;
     }
 
     @Override

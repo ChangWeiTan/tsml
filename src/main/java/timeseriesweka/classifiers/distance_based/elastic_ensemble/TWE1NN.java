@@ -319,22 +319,26 @@ public class TWE1NN extends Efficient1NN {
      ************************************************************************************************/
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex) {
-        return LbTwed.distance(query, candidate, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), nu, lambda);
+//        return LbTwed.distance(query, candidate, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), nu, lambda);
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final double cutOffValue) {
-        return LbTwed.distance(query, candidate, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), nu, lambda, cutOffValue);
+//        return LbTwed.distance(query, candidate, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), nu, lambda, cutOffValue);
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final SequenceStatsCache cache) {
-        return LbTwed.distance(query, candidate, cache.getMax(queryIndex), cache.getMin(queryIndex), nu, lambda);
+//        return LbTwed.distance(query, candidate, cache.getMax(queryIndex), cache.getMin(queryIndex), nu, lambda);
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final double cutOffValue, final SequenceStatsCache cache) {
-        return LbTwed.distance(query, candidate, cache.getMax(queryIndex), cache.getMin(queryIndex), nu, lambda, cutOffValue);
+//        return LbTwed.distance(query, candidate, cache.getMax(queryIndex), cache.getMin(queryIndex), nu, lambda, cutOffValue);
+        return 0;
     }
 
     @Override

@@ -230,22 +230,26 @@ public class LCSS1NN extends Efficient1NN {
      ************************************************************************************************/
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex) {
-        return LbLcss.distance(candidate, trainCache.getUE(queryIndex, delta, epsilon), trainCache.getLE(queryIndex, delta, epsilon));
+//        return LbLcss.distance(candidate, trainCache.getUE(queryIndex, delta, epsilon), trainCache.getLE(queryIndex, delta, epsilon));
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, double cutOffValue) {
-        return LbLcss.distance(candidate, trainCache.getUE(queryIndex, delta, epsilon), trainCache.getLE(queryIndex, delta, epsilon), cutOffValue);
+//        return LbLcss.distance(candidate, trainCache.getUE(queryIndex, delta, epsilon), trainCache.getLE(queryIndex, delta, epsilon), cutOffValue);
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, SequenceStatsCache cache) {
-        return LbLcss.distance(candidate, cache.getUE(queryIndex, delta, epsilon), cache.getLE(queryIndex, delta, epsilon));
+//        return LbLcss.distance(candidate, cache.getUE(queryIndex, delta, epsilon), cache.getLE(queryIndex, delta, epsilon));
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, double cutOffValue, SequenceStatsCache cache) {
-        return LbLcss.distance(candidate, cache.getUE(queryIndex, delta, epsilon), cache.getLE(queryIndex, delta, epsilon), cutOffValue);
+//        return LbLcss.distance(candidate, cache.getUE(queryIndex, delta, epsilon), cache.getLE(queryIndex, delta, epsilon), cutOffValue);
+        return 0;
     }
 
     @Override

@@ -262,22 +262,26 @@ public class ERP1NN extends Efficient1NN {
      ************************************************************************************************/
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex) {
-        return LbErp.distance(candidate, trainCache.getUE(queryIndex, g, bandSize), trainCache.getLE(queryIndex, g, bandSize));
+//        return LbErp.distance(candidate, trainCache.getUE(queryIndex, g, bandSize), trainCache.getLE(queryIndex, g, bandSize));
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, double cutOffValue) {
-        return LbErp.distance(candidate, trainCache.getUE(queryIndex, g, bandSize), trainCache.getLE(queryIndex, g, bandSize), cutOffValue);
+//        return LbErp.distance(candidate, trainCache.getUE(queryIndex, g, bandSize), trainCache.getLE(queryIndex, g, bandSize), cutOffValue);
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, SequenceStatsCache cache) {
-        return LbErp.distance(candidate, cache.getUE(queryIndex, g, bandSize), cache.getLE(queryIndex, g, bandSize));
+//        return LbErp.distance(candidate, cache.getUE(queryIndex, g, bandSize), cache.getLE(queryIndex, g, bandSize));
+        return 0;
     }
 
     @Override
     public double lowerBound(Instance query, Instance candidate, int queryIndex, int candidateIndex, double cutOffValue, SequenceStatsCache cache) {
-        return LbErp.distance(candidate, cache.getUE(queryIndex, g, bandSize), cache.getLE(queryIndex, g, bandSize), cutOffValue);
+//        return LbErp.distance(candidate, cache.getUE(queryIndex, g, bandSize), cache.getLE(queryIndex, g, bandSize), cutOffValue);
+        return 0;
     }
 
     @Override

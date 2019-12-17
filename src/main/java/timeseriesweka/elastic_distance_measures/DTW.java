@@ -108,13 +108,13 @@ generalised for variable window size
         diff = first.value(0) - second.value(0);
         distMatrix[0][0] = diff * diff;
         minDistanceToDiagonal[0][0] = 0;
-        for (i = 1; i < Math.min(n, 1 + windowSize); i++) {
+        for (i = 1; i < windowSize && i < n; i++) {
             diff = first.value(i) - second.value(0);
             distMatrix[i][0] = distMatrix[i - 1][0] + diff * diff;
             minDistanceToDiagonal[i][0] = i;
         }
 
-        for (j = 1; j < Math.min(m, 1 + windowSize); j++) {
+        for (j = 1; j < windowSize && j < m; j++) {
             diff = first.value(0) - second.value(j);
             distMatrix[0][j] = distMatrix[0][j - 1] + diff * diff;
             minDistanceToDiagonal[0][j] = j;
@@ -122,9 +122,9 @@ generalised for variable window size
         if (j < m) distMatrix[0][j] = Double.POSITIVE_INFINITY;
 
         for (i = 1; i < n; i++) {
-            jStart = Math.max(1, i - windowSize);
-            jEnd = Math.min(m, i + windowSize + 1);
-            indexInfyLeft = i - windowSize - 1;
+            jStart = windowSize < i ? i - windowSize + 1 : 1;
+            jEnd = Math.min(i + windowSize, m);
+            indexInfyLeft = i - windowSize;
             if (indexInfyLeft >= 0) distMatrix[i][indexInfyLeft] = Double.POSITIVE_INFINITY;
 
             for (j = jStart; j < jEnd; j++) {

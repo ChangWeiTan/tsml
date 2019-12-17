@@ -323,22 +323,26 @@ public class MSM1NN extends Efficient1NN {
      ************************************************************************************************/
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex){
-        return LbMsm.distance(query, candidate, c, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex));
+//        return LbMsm.distance(query, candidate, c, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex));
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final double cutOffValue){
-        return LbMsm.distance(query, candidate, c, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), cutOffValue);
+//        return LbMsm.distance(query, candidate, c, trainCache.getMax(queryIndex), trainCache.getMin(queryIndex), cutOffValue);
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final SequenceStatsCache cache){
-        return LbMsm.distance(query, candidate, c, cache.getMax(queryIndex), cache.getMin(queryIndex));
+//        return LbMsm.distance(query, candidate, c, cache.getMax(queryIndex), cache.getMin(queryIndex));
+        return 0;
     }
 
     @Override
     public double lowerBound(final Instance query, final Instance candidate, final int queryIndex, final int candidateIndex, final double cutOffValue,  final SequenceStatsCache cache){
-        return LbMsm.distance(query, candidate, c, cache.getMax(queryIndex), cache.getMin(queryIndex), cutOffValue);
+//        return LbMsm.distance(query, candidate, c, cache.getMax(queryIndex), cache.getMin(queryIndex), cutOffValue);
+        return 0;
     }
 
     @Override

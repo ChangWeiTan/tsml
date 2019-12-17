@@ -42,3 +42,4 @@ defaultShapeletOutput.txt
 # testing and local results files
 Results/
 Analysis/
+out/

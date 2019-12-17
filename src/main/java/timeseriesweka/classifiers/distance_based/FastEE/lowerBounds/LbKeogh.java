@@ -172,12 +172,12 @@ public class LbKeogh {
             if (c < L[i]) {
                 final double diff = L[i] - c;
                 res += diff * diff;
-                if (res >= cutOffValue)
+                if (res > cutOffValue)
                     return Double.MAX_VALUE;
             } else if (U[i] < c) {
                 final double diff = U[i] - c;
                 res += diff * diff;
-                if (res >= cutOffValue)
+                if (res > cutOffValue)
                     return Double.MAX_VALUE;
             }
         }

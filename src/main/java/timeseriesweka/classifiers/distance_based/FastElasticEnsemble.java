@@ -251,6 +251,10 @@ public class FastElasticEnsemble extends ElasticEnsemble {
         return st.toString();
     }
 
+    public Efficient1NN[] getClassifiers() {
+        return classifiers;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "\n" + this.getClassifierInfo();
